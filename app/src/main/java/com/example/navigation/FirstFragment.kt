@@ -5,16 +5,32 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import com.example.navigation.databinding.FragmentFirstBinding
 
 
 class FirstFragment : Fragment() {
-
+lateinit var binding: FragmentFirstBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        val view =inflater.inflate(R.layout.fragment_first, container, false)
+
+
+
+
+        binding = FragmentFirstBinding.bind(view)
+
+        binding.textView.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.moveToSecond)
+        }
+
+
+   return  view
+
     }
 
 
