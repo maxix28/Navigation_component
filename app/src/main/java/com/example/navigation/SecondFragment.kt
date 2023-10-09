@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.example.navigation.databinding.FragmentSecondBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -21,7 +22,7 @@ private const val ARG_PARAM2 = "param2"
 class SecondFragment : Fragment() {
 
 lateinit var  binding: FragmentSecondBinding
-
+val args :SecondFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +33,7 @@ lateinit var  binding: FragmentSecondBinding
 
         val view = inflater.inflate(R.layout.fragment_second, container, false)
         binding = FragmentSecondBinding.bind(view)
-
+binding.textView2.setText(args.text)
         binding.textView2.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.moveToFirst    )
         }

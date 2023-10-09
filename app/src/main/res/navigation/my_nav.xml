@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_first" >
         <action
             android:id="@+id/moveToSecond"
-            app:destination="@id/secondFragment" />
+            app:destination="@id/secondFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
@@ -21,6 +23,12 @@
         tools:layout="@layout/fragment_second" >
         <action
             android:id="@+id/moveToFirst"
-            app:destination="@id/firstFragment" />
+            app:destination="@id/firstFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+        <argument
+            android:name="text"
+            app:argType="string"
+            android:defaultValue="LALALALA" />
     </fragment>
 </navigation>

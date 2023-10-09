@@ -23,9 +23,11 @@ lateinit var binding: FragmentFirstBinding
 
 
         binding = FragmentFirstBinding.bind(view)
+val data = binding.input.text.toString()
 
         binding.textView.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.moveToSecond)
+            val action = FirstFragmentDirections.moveToSecond("Work")
+            Navigation.findNavController(view).navigate(action)
         }
 
 
