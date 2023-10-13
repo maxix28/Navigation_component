@@ -23,7 +23,7 @@ lateinit var binding: FragmentFirstBinding
 
 
         binding = FragmentFirstBinding.bind(view)
-val data = binding.input.text.toString()
+
 
         binding.textView.setOnClickListener {
             val action = FirstFragmentDirections.moveToSecond("Work")
